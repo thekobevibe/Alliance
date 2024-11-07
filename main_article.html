@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статья об искусстве</title>
+    <style>
+        /* Основные стили */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #c3bba5;
+            color: #555;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            max-width: 1000px;
+            margin: 25px auto;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+            border-radius: 14px;
+            background-color: #ffcad4; /* Пастельно-розовый */
+            color: #333;
+            text-align: center;
+            padding: 25px;
+            position: relative;
+}
+
+.socials {
+	max-width: 1050px;
+	margin: 25px auto;
+	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+	border-radius: 14px;
+	text-align: center;
+	margin-top: 20px;
+	padding: 20px 0;
+	background-color: #ffedd8; /* Пастельно-кремовый */
+	color: #333;
+}
+
+.socials a {
+	color: #333;
+	margin: 0 10px;
+	text-decoration: none;
+}
+
+.socials a:hover {
+	color: #f783ac; /* Пастельно-розовый при наведении */
+}
+
+        .container {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 25px;
+            background-color: #fff8f0;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+            border-radius: 14px;
+        }
+        .title {
+            text-align: center;
+            font-size: 28px;
+            color: #8c7c6d;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        .image-circle {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+        .image-circle img {
+            width: 170px;
+            height: 170px;
+            border-radius: 70%;
+            object-fit: cover;
+            border: 3px solid #e8d3c2;
+        }
+        .term-definition {
+            background-color: #f0e2d1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .term-definition p {
+            margin: 0;
+            font-style: italic;
+            color: #8c7c6d;
+        }
+        .content {
+            margin: 20px 0;
+            font-size: 16px;
+            color: #6f5e51;
+        }
+
+        /* Стили для карусели */
+        .carousel-container {
+            position: relative;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .carousel-image {
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            border-radius: 12px;
+            object-fit: cover;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .carousel-image.hidden {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            gap: 8px;
+        }
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #d1bbaa;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .indicator.active {
+            background-color: #8c7c6d;
+        }
+    </style>
+</head>
+<body>
+
+	<header>
+    <h1>Alliance</h1>
+</header>
+
+<div class="container">
+    <!-- Круглое изображение в заголовке -->
+    <div class="image-circle">
+        <img src="https://i.pinimg.com/originals/c3/f3/07/c3f307d41d95a3d3a606205d904a8106.png" alt="Картинка для статьи">
+    </div>
+
+    <!-- Заголовок статьи -->
+    <div class="title">Искусство</div>
+
+    <!-- Термин и определение -->
+    <div class="term-definition">
+        <p>Искусство — это термин, которым обозначают произведения, созданные человеком, а также сам процесс творчества. Автор художественно осмысляет действительность, передает идею через художественный образ.</p>
+    </div>
+
+    <!-- Основное содержание -->
+    <div class="content">
+        <p>Ученые считают, что искусство зародилось еще в первобытном мире. В период с 35-го по 10-е тысячелетие до нашей эры возникли живопись, графика и скульптура. Наскальные рисунки и древние фигурки из камня археологи и в наши дни находят по всему миру...</p>
+        <p>На Руси раннее искусство связано с зодчеством. После принятия христианства в городах и селениях строили церкви...</p>
+    </div>
+
+    <!-- Карусель с изображениями и индикаторами -->
+    <div class="carousel-container">
+        <img src="https://i.pinimg.com/originals/c3/f3/07/c3f307d41d95a3d3a606205d904a8106.png" alt="Фото 1" class="carousel-image" id="image-1">
+        <img src="https://i.pinimg.com/originals/c3/f3/07/c3f307d41d95a3d3a606205d904a8106.png" alt="Фото 2" class="carousel-image hidden" id="image-2">
+        <img src="https://i.pinimg.com/originals/c3/f3/07/c3f307d41d95a3d3a606205d904a8106.png" alt="Фото 3" class="carousel-image hidden" id="image-3">
+        <!-- Добавьте больше изображений, если необходимо -->
+        
+        <!-- Индикаторы для карусели -->
+        <div class="carousel-indicators">
+            <div class="indicator active" onclick="showImage(1)"></div>
+            <div class="indicator" onclick="showImage(2)"></div>
+            <div class="indicator" onclick="showImage(3)"></div>
+        </div>
+    </div>
+</div>
+
+<footer class="socials">
+	<p>Также наши социальные сети:</p>
+	<a href="https://www.instagram.com/110_alliance.news?igsh=MWN0eG9xNWhxaDg3cA==">Instagram</a>
+	<a href="https://t.me/alliance110school">Telegram</a>
+</footer>
+
+<script>
+    let currentImageIndex = 1;
+    const totalImages = 3;
+
+    function showImage(index) {
+        // Обновляем текущий индекс
+        currentImageIndex = index;
+        
+        // Прячем все изображения
+        for (let i = 1; i <= totalImages; i++) {
+            document.getElementById('image-' + i).classList.add('hidden');
+            document.querySelectorAll('.indicator')[i - 1].classList.remove('active');
+        }
+        
+        // Показываем выбранное изображение и активируем индикатор
+        document.getElementById('image-' + index).classList.remove('hidden');
+        document.querySelectorAll('.indicator')[index - 1].classList.add('active');
+    }
+
+    // Автоматическая смена изображений каждые 7 секунды
+    setInterval(() => {
+        currentImageIndex = currentImageIndex < totalImages ? currentImageIndex + 1 : 1;
+        showImage(currentImageIndex);
+    }, 7000);
+</script>
+
+</body>
+</html>
